@@ -27,6 +27,8 @@ import org.eclipse.swt.events.ControlEvent;
 import org.eclipse.swt.events.ControlListener;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.FocusListener;
+import org.eclipse.swt.events.ModifyEvent;
+import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.MouseListener;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -52,7 +54,6 @@ import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.swt.widgets.Widget;
 import org.eclipse.ui.ISharedImages;
 
 import com.google.common.base.Charsets;
@@ -72,9 +73,13 @@ public class PropertyCellEditor extends TextCellEditor {
 
 	private String descriptionData;
 
+	private boolean filterEnabled;
+	private boolean valueIsSelectedFromList = false;
+
 	private int listMaxHeight;
 	private int descWidth;
 	private int descHeight;
+	private boolean open = false;
 	private boolean closed = false;
 
 	private static final int LIST_MAX_HEIGHT = 200;
@@ -84,6 +89,7 @@ public class PropertyCellEditor extends TextCellEditor {
 	public PropertyCellEditor(Composite parent, java.util.List<SuggestionItem> suggestions) {
 		super(parent);
 		this.suggestions = suggestions;
+		this.filterEnabled = false;
 		text = (Text) super.getControl();
 		createPopup(text);
 		createButton();
@@ -173,19 +179,22 @@ public class PropertyCellEditor extends TextCellEditor {
 	}
 
 	private void open() {
-		if( closed) {
+		if (closed) {
 			return;
 		}
 		if (!isActive()) {
 			return;
 		}
+		this.open = true;
 		setItems(suggestions);
 		setShellBounds();
 		setChildElementsBounds();
+		filterValues(text.getText());
 		shell.setVisible(true);
 	}
 
 	private void close() {
+		this.open = false;
 		this.closed = true;
 		if (!shell.isDisposed()) {
 			shell.setVisible(false);
@@ -196,17 +205,31 @@ public class PropertyCellEditor extends TextCellEditor {
 	}
 
 	private void addListeners() {
+		text.addModifyListener(new ModifyListener() {
+
+			@Override
+			public void modifyText(ModifyEvent e) {
+				// Don't apply filtering if the value is changed by selection from list 
+				if (valueIsSelectedFromList) {
+					valueIsSelectedFromList = false;
+					return;
+				}
+				filterValues(text.getText());
+			}
+
+		});
+
 		text.getShell().addControlListener(new ControlListener() {
 
 			@Override
 			public void controlMoved(ControlEvent e) {
-//				shell.setFocus();
+				// shell.setFocus();
 				close();
 			}
 
 			@Override
 			public void controlResized(ControlEvent e) {
-//				shell.setFocus();
+				// shell.setFocus();
 				close();
 			}
 
@@ -228,30 +251,26 @@ public class PropertyCellEditor extends TextCellEditor {
 		list.addSelectionListener(new SelectionListener() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				select(list.getSelectionIndex());
+				selectValueFromList(list.getSelectionIndex());
 			}
 			
 			@Override
-			public void widgetDefaultSelected(SelectionEvent e) {				
+			public void widgetDefaultSelected(SelectionEvent e) {
 			}
 		});
 		
 		list.addMouseListener(new MouseListener() {
 			@Override
 			public void mouseUp(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
 			}
 			
 			@Override
 			public void mouseDown(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
 			}
 			
 			@Override
 			public void mouseDoubleClick(MouseEvent e) {
-				select(list.getSelectionIndex());
+				selectValueFromList(list.getSelectionIndex());
 				completeEdit();
 			}
 		});
@@ -264,7 +283,7 @@ public class PropertyCellEditor extends TextCellEditor {
 				case SWT.TRAVERSE_ARROW_NEXT:
 					if (e.keyCode == SWT.ARROW_DOWN) {
 						int oldIndex = list.getSelectionIndex();
-						select(Math.min(oldIndex + 1, list.getItemCount() - 1));
+						selectValueFromList(Math.min(oldIndex + 1, list.getItemCount() - 1));
 
 						e.detail = SWT.TRAVERSE_NONE;
 						e.doit = false;
@@ -273,7 +292,7 @@ public class PropertyCellEditor extends TextCellEditor {
 				case SWT.TRAVERSE_ARROW_PREVIOUS:
 					if (e.keyCode == SWT.ARROW_UP) {
 						int oldIndex = list.getSelectionIndex();
-						select(Math.max(oldIndex - 1, 0));
+						selectValueFromList(Math.max(oldIndex - 1, 0));
 
 						e.detail = SWT.TRAVERSE_NONE;
 						e.doit = false;
@@ -302,7 +321,7 @@ public class PropertyCellEditor extends TextCellEditor {
 			@Override
 			public void focusGained(FocusEvent e) {
 				if (e.widget == text) {
-					if (!isVisible()) {
+					if (!isOpen()) {
 						open();
 						return;
 					}
@@ -373,6 +392,11 @@ public class PropertyCellEditor extends TextCellEditor {
 			protected IStatus run(IProgressMonitor monitor) {
 				Display.getDefault().asyncExec(new Runnable() {
 					public void run() {
+						Control control = Display.getDefault().getFocusControl();
+						if (control == browser) {
+							list.setFocus();
+							return;
+						}
 						deactivateAll();
 					}
 				});
@@ -395,15 +419,16 @@ public class PropertyCellEditor extends TextCellEditor {
 		super.deactivate();
 	}
 
-	public boolean isVisible() {
-		return shell.getVisible();
+	public boolean isOpen() {
+		return open;
 	}
 
 	public boolean isActive() {
 		return suggestions != null && !suggestions.isEmpty();
 	}
 
-	private void select(int index) {
+	private void selectValueFromList(int index) {
+		valueIsSelectedFromList = true;
 		if (0 <= index && index < list.getItemCount()) {
 			String value = list.getItem(index);
 			text.setText(value);
@@ -423,6 +448,36 @@ public class PropertyCellEditor extends TextCellEditor {
 				browser.setText("");
 			}
 		}
+	}
+
+	private void filterValues(String value) {
+		if (!filterEnabled) {
+			return;
+		}
+		if (!isOpen()) {
+			return;
+		}
+		if (value == null) {
+			value = "";
+		}
+		java.util.List<String> items = new ArrayList<String>();
+		for (SuggestionItem suggestion : suggestions) {
+			String name = suggestion.getName();
+			if (name.startsWith(value)) {
+				items.add(name);
+			}
+		}
+		if (items.isEmpty()) {
+			shell.setVisible(false);
+			description.setVisible(false);
+			return;
+		}
+		description.setVisible(false);
+		list.setItems(items.toArray(new String[0]));
+		list.deselectAll();
+		setShellBounds();
+		setChildElementsBounds();
+		shell.setVisible(true);
 	}
 
 	private void setItems(java.util.List<SuggestionItem> suggestions) {
@@ -475,6 +530,14 @@ public class PropertyCellEditor extends TextCellEditor {
 			Q7UIPlugin.log(e);
 			return styles = "";
 		}
+	}
+
+	public boolean isFilterEnabled() {
+		return filterEnabled;
+	}
+
+	public void setFilterEnabled(boolean filterEnabled) {
+		this.filterEnabled = filterEnabled;
 	}
 
 	public int getListMaximumHeight() {

@@ -17,7 +17,7 @@ import org.eclipse.rcptt.ui.editors.IScenarioPropertyProvider;
 
 public class TestRailPropertySuggestionProvider implements IScenarioPropertyProvider {
 	
-	private final static long UPDATE_DELAY = 30000;
+	private final static long UPDATE_DELAY = 5000;
 
 	private List<SuggestionItem> testCaseIdSuggestions;
 

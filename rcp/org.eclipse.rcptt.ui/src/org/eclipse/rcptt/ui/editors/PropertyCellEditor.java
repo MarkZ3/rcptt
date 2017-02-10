@@ -392,8 +392,15 @@ public class PropertyCellEditor extends TextCellEditor {
 			protected IStatus run(IProgressMonitor monitor) {
 				Display.getDefault().asyncExec(new Runnable() {
 					public void run() {
+						// If user clicks on the description (or scrolls it),
+						// focusGained event is not fired for browser.
+						// So, we check a current focus control before closing the popup.
+						// On windows current control - WebSite
+						// and we check control.getParent().getParent() from it.
 						Control control = Display.getDefault().getFocusControl();
-						if (control == browser) {
+						if (control == browser || (control.getParent() != null
+								&& control.getParent().getParent() != null
+								&& control.getParent().getParent() == browser)) {
 							list.setFocus();
 							return;
 						}

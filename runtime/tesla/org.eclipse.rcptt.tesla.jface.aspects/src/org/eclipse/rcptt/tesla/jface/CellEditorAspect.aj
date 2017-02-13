@@ -131,12 +131,15 @@ public aspect CellEditorAspect {
 		&& target(event) && args(cell) {
 		if (inCellEditorActivate) {
 			try {
-				event.eventType = ColumnViewerEditorActivationEvent.MOUSE_CLICK_SELECTION;
+				TeslaCellEditorManager manager = TeslaCellEditorManager.getInstance();
+				int type = manager.getNextCellEditorActivateEventType();
+				int button = manager.getNextCellEditorActivateEventButton();
+				event.eventType = type;
 				Rectangle bounds = cell.getBounds();
 				Event e = new Event();
 				e.x = bounds.x + bounds.width / 2;
 				e.y = bounds.y + bounds.height / 2;
-				e.button = ColumnViewerEditorActivationEvent.KEY_PRESSED;
+				e.button = button;
 				e.widget = cell.getItem();
 				MouseEvent me = new MouseEvent(e);
 				event.sourceEvent = me;

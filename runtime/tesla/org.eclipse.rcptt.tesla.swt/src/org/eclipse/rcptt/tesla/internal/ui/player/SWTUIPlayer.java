@@ -151,7 +151,8 @@ import org.eclipse.ui.internal.registry.EditorRegistry;
 
 @SuppressWarnings("restriction")
 public final class SWTUIPlayer {
-	private static final boolean DEBUG_PROCEED = "true".equals(Platform.getDebugOption("org.eclipse.rcptt.tesla.swt/debug/proceed"));
+	private static final boolean DEBUG_PROCEED = "true"
+			.equals(Platform.getDebugOption("org.eclipse.rcptt.tesla.swt/debug/proceed"));
 	final Display display;
 	private SWTUIElement[] ignoreWindows;
 	private Shell[] ignoredShells;
@@ -1587,7 +1588,9 @@ public final class SWTUIPlayer {
 		}
 
 		if ((menu.getStyle() & SWT.BAR) == 0) { // Not a menu bar
-			shownMenus.add(new WeakReference<Menu>(menu));
+			synchronized (shownMenus) {
+				shownMenus.add(new WeakReference<Menu>(menu));
+			}
 		}
 
 		events.sendEvent(uiElement, SWT.Show, pos.x, pos.y, 0);
@@ -1773,8 +1776,7 @@ public final class SWTUIPlayer {
 				debugProceed("Previous tsk is still pending");
 				return false;
 			}
-			if (!TeslaEventManager.getManager().isNoWaitForJob()
-					&& !collector.isEmpty(context, info)) {
+			if (!TeslaEventManager.getManager().isNoWaitForJob() && !collector.isEmpty(context, info)) {
 				debugProceed("There are active jobs");
 				return false;
 			}
@@ -2745,27 +2747,37 @@ public final class SWTUIPlayer {
 		if (curDisplay == null || curDisplay.isDisposed()) {
 			return false;
 		}
-		curDisplay.syncExec(new Runnable() {
-			@Override
-			public void run() {
-				for (WeakReference<Menu> weakReference : shownMenus) {
-					Menu menu = weakReference.get();
-					if (menu == null) {
-						continue;
-					}
-					// We also need to hide all parent menus.
-					while (menu != null && !menu.isDisposed()) {
-						events.sendEvent(menu, SWT.Hide);
-						menu = menu.getParentMenu();
-					}
-					Q7WaitUtils.updateInfo("menu", "hide", info);
+		final List<Menu> menusToProceed = new ArrayList<>();
 
+		synchronized (shownMenus) {
+			for (WeakReference<Menu> weakReference : shownMenus) {
+				Menu menu = weakReference.get();
+				if (menu == null) {
+					continue;
 				}
-				result[0] = !shownMenus.isEmpty();
-				shownMenus.clear();
-				// TODO Auto-generated method stub
+				menusToProceed.add(menu);
 			}
-		});
+			shownMenus.clear();
+		}
+		if (!menusToProceed.isEmpty()) {
+			Q7WaitUtils.updateInfo("menu", "hide", info);
+			curDisplay.syncExec(new Runnable() {
+				@Override
+				public void run() {
+					for (Menu menu : menusToProceed) {
+						// We also need to hide all parent menus.
+						while (menu != null && !menu.isDisposed()) {
+							events.sendEvent(menu, SWT.Hide);
+							menu = menu.getParentMenu();
+						}
+
+					}
+				}
+			});
+		}
+		synchronized (shownMenus) {
+			result[0] = !shownMenus.isEmpty();
+		}
 		return result[0];
 	}
 

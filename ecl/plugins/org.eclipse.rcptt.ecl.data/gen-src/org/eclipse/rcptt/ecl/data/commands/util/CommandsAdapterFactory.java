@@ -130,6 +130,34 @@ public class CommandsAdapterFactory extends AdapterFactoryImpl {
 				return createReadFileAdapter();
 			}
 			@Override
+			public Adapter caseWriteExcelFile(WriteExcelFile object) {
+				return createWriteExcelFileAdapter();
+			}
+			@Override
+			public Adapter caseReadExcelFile(ReadExcelFile object) {
+				return createReadExcelFileAdapter();
+			}
+			@Override
+			public Adapter caseGetPageName(GetPageName object) {
+				return createGetPageNameAdapter();
+			}
+			@Override
+			public Adapter caseSetPageName(SetPageName object) {
+				return createSetPageNameAdapter();
+			}
+			@Override
+			public Adapter caseGetColumnNames(GetColumnNames object) {
+				return createGetColumnNamesAdapter();
+			}
+			@Override
+			public Adapter caseGetRowsData(GetRowsData object) {
+				return createGetRowsDataAdapter();
+			}
+			@Override
+			public Adapter caseListAsTableData(ListAsTableData object) {
+				return createListAsTableDataAdapter();
+			}
+			@Override
 			public Adapter caseCommand(Command object) {
 				return createCommandAdapter();
 			}
@@ -332,6 +360,104 @@ public class CommandsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createReadFileAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.rcptt.ecl.data.commands.WriteExcelFile <em>Write Excel File</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.rcptt.ecl.data.commands.WriteExcelFile
+	 * @generated
+	 */
+	public Adapter createWriteExcelFileAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.rcptt.ecl.data.commands.ReadExcelFile <em>Read Excel File</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.rcptt.ecl.data.commands.ReadExcelFile
+	 * @generated
+	 */
+	public Adapter createReadExcelFileAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.rcptt.ecl.data.commands.GetPageName <em>Get Page Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.rcptt.ecl.data.commands.GetPageName
+	 * @generated
+	 */
+	public Adapter createGetPageNameAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.rcptt.ecl.data.commands.SetPageName <em>Set Page Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.rcptt.ecl.data.commands.SetPageName
+	 * @generated
+	 */
+	public Adapter createSetPageNameAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.rcptt.ecl.data.commands.GetColumnNames <em>Get Column Names</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.rcptt.ecl.data.commands.GetColumnNames
+	 * @generated
+	 */
+	public Adapter createGetColumnNamesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.rcptt.ecl.data.commands.GetRowsData <em>Get Rows Data</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.rcptt.ecl.data.commands.GetRowsData
+	 * @generated
+	 */
+	public Adapter createGetRowsDataAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.rcptt.ecl.data.commands.ListAsTableData <em>List As Table Data</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.rcptt.ecl.data.commands.ListAsTableData
+	 * @generated
+	 */
+	public Adapter createListAsTableDataAdapter() {
 		return null;
 	}
 

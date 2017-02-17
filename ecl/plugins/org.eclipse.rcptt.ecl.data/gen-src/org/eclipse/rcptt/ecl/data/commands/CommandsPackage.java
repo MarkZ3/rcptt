@@ -800,6 +800,355 @@ public interface CommandsPackage extends EPackage {
 	int READ_FILE_FEATURE_COUNT = CorePackage.COMMAND_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.rcptt.ecl.data.commands.impl.WriteExcelFileImpl <em>Write Excel File</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.rcptt.ecl.data.commands.impl.WriteExcelFileImpl
+	 * @see org.eclipse.rcptt.ecl.data.commands.impl.CommandsPackageImpl#getWriteExcelFile()
+	 * @generated
+	 */
+	int WRITE_EXCEL_FILE = 13;
+
+	/**
+	 * The feature id for the '<em><b>Host</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WRITE_EXCEL_FILE__HOST = CorePackage.COMMAND__HOST;
+
+	/**
+	 * The feature id for the '<em><b>Bindings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WRITE_EXCEL_FILE__BINDINGS = CorePackage.COMMAND__BINDINGS;
+
+	/**
+	 * The feature id for the '<em><b>Tables</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WRITE_EXCEL_FILE__TABLES = CorePackage.COMMAND_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Uri</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WRITE_EXCEL_FILE__URI = CorePackage.COMMAND_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Write Excel File</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WRITE_EXCEL_FILE_FEATURE_COUNT = CorePackage.COMMAND_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.rcptt.ecl.data.commands.impl.ReadExcelFileImpl <em>Read Excel File</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.rcptt.ecl.data.commands.impl.ReadExcelFileImpl
+	 * @see org.eclipse.rcptt.ecl.data.commands.impl.CommandsPackageImpl#getReadExcelFile()
+	 * @generated
+	 */
+	int READ_EXCEL_FILE = 14;
+
+	/**
+	 * The feature id for the '<em><b>Host</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int READ_EXCEL_FILE__HOST = CorePackage.COMMAND__HOST;
+
+	/**
+	 * The feature id for the '<em><b>Bindings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int READ_EXCEL_FILE__BINDINGS = CorePackage.COMMAND__BINDINGS;
+
+	/**
+	 * The feature id for the '<em><b>Uri</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int READ_EXCEL_FILE__URI = CorePackage.COMMAND_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Sheets</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int READ_EXCEL_FILE__SHEETS = CorePackage.COMMAND_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Read Excel File</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int READ_EXCEL_FILE_FEATURE_COUNT = CorePackage.COMMAND_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.rcptt.ecl.data.commands.impl.GetPageNameImpl <em>Get Page Name</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.rcptt.ecl.data.commands.impl.GetPageNameImpl
+	 * @see org.eclipse.rcptt.ecl.data.commands.impl.CommandsPackageImpl#getGetPageName()
+	 * @generated
+	 */
+	int GET_PAGE_NAME = 15;
+
+	/**
+	 * The feature id for the '<em><b>Host</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_PAGE_NAME__HOST = CorePackage.COMMAND__HOST;
+
+	/**
+	 * The feature id for the '<em><b>Bindings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_PAGE_NAME__BINDINGS = CorePackage.COMMAND__BINDINGS;
+
+	/**
+	 * The feature id for the '<em><b>Table</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_PAGE_NAME__TABLE = CorePackage.COMMAND_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Get Page Name</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_PAGE_NAME_FEATURE_COUNT = CorePackage.COMMAND_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.rcptt.ecl.data.commands.impl.SetPageNameImpl <em>Set Page Name</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.rcptt.ecl.data.commands.impl.SetPageNameImpl
+	 * @see org.eclipse.rcptt.ecl.data.commands.impl.CommandsPackageImpl#getSetPageName()
+	 * @generated
+	 */
+	int SET_PAGE_NAME = 16;
+
+	/**
+	 * The feature id for the '<em><b>Host</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SET_PAGE_NAME__HOST = CorePackage.COMMAND__HOST;
+
+	/**
+	 * The feature id for the '<em><b>Bindings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SET_PAGE_NAME__BINDINGS = CorePackage.COMMAND__BINDINGS;
+
+	/**
+	 * The feature id for the '<em><b>Table</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SET_PAGE_NAME__TABLE = CorePackage.COMMAND_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SET_PAGE_NAME__NAME = CorePackage.COMMAND_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Set Page Name</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SET_PAGE_NAME_FEATURE_COUNT = CorePackage.COMMAND_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.rcptt.ecl.data.commands.impl.GetColumnNamesImpl <em>Get Column Names</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.rcptt.ecl.data.commands.impl.GetColumnNamesImpl
+	 * @see org.eclipse.rcptt.ecl.data.commands.impl.CommandsPackageImpl#getGetColumnNames()
+	 * @generated
+	 */
+	int GET_COLUMN_NAMES = 17;
+
+	/**
+	 * The feature id for the '<em><b>Host</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_COLUMN_NAMES__HOST = CorePackage.COMMAND__HOST;
+
+	/**
+	 * The feature id for the '<em><b>Bindings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_COLUMN_NAMES__BINDINGS = CorePackage.COMMAND__BINDINGS;
+
+	/**
+	 * The feature id for the '<em><b>Table</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_COLUMN_NAMES__TABLE = CorePackage.COMMAND_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Get Column Names</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_COLUMN_NAMES_FEATURE_COUNT = CorePackage.COMMAND_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.rcptt.ecl.data.commands.impl.GetRowsDataImpl <em>Get Rows Data</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.rcptt.ecl.data.commands.impl.GetRowsDataImpl
+	 * @see org.eclipse.rcptt.ecl.data.commands.impl.CommandsPackageImpl#getGetRowsData()
+	 * @generated
+	 */
+	int GET_ROWS_DATA = 18;
+
+	/**
+	 * The feature id for the '<em><b>Host</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_ROWS_DATA__HOST = CorePackage.COMMAND__HOST;
+
+	/**
+	 * The feature id for the '<em><b>Bindings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_ROWS_DATA__BINDINGS = CorePackage.COMMAND__BINDINGS;
+
+	/**
+	 * The feature id for the '<em><b>Table</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_ROWS_DATA__TABLE = CorePackage.COMMAND_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Get Rows Data</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_ROWS_DATA_FEATURE_COUNT = CorePackage.COMMAND_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.rcptt.ecl.data.commands.impl.ListAsTableDataImpl <em>List As Table Data</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.rcptt.ecl.data.commands.impl.ListAsTableDataImpl
+	 * @see org.eclipse.rcptt.ecl.data.commands.impl.CommandsPackageImpl#getListAsTableData()
+	 * @generated
+	 */
+	int LIST_AS_TABLE_DATA = 19;
+
+	/**
+	 * The feature id for the '<em><b>Host</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LIST_AS_TABLE_DATA__HOST = CorePackage.COMMAND__HOST;
+
+	/**
+	 * The feature id for the '<em><b>Bindings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LIST_AS_TABLE_DATA__BINDINGS = CorePackage.COMMAND__BINDINGS;
+
+	/**
+	 * The feature id for the '<em><b>List</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LIST_AS_TABLE_DATA__LIST = CorePackage.COMMAND_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>List As Table Data</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LIST_AS_TABLE_DATA_FEATURE_COUNT = CorePackage.COMMAND_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.rcptt.ecl.data.commands.IgnoreColumnsMode <em>Ignore Columns Mode</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -807,7 +1156,7 @@ public interface CommandsPackage extends EPackage {
 	 * @see org.eclipse.rcptt.ecl.data.commands.impl.CommandsPackageImpl#getIgnoreColumnsMode()
 	 * @generated
 	 */
-	int IGNORE_COLUMNS_MODE = 13;
+	int IGNORE_COLUMNS_MODE = 20;
 
 
 	/**
@@ -818,7 +1167,7 @@ public interface CommandsPackage extends EPackage {
 	 * @see org.eclipse.rcptt.ecl.data.commands.impl.CommandsPackageImpl#getRowMatchMode()
 	 * @generated
 	 */
-	int ROW_MATCH_MODE = 14;
+	int ROW_MATCH_MODE = 21;
 
 
 	/**
@@ -1260,6 +1609,186 @@ public interface CommandsPackage extends EPackage {
 	EAttribute getReadFile_Uri();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.rcptt.ecl.data.commands.WriteExcelFile <em>Write Excel File</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Write Excel File</em>'.
+	 * @see org.eclipse.rcptt.ecl.data.commands.WriteExcelFile
+	 * @generated
+	 */
+	EClass getWriteExcelFile();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.eclipse.rcptt.ecl.data.commands.WriteExcelFile#getTables <em>Tables</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Tables</em>'.
+	 * @see org.eclipse.rcptt.ecl.data.commands.WriteExcelFile#getTables()
+	 * @see #getWriteExcelFile()
+	 * @generated
+	 */
+	EReference getWriteExcelFile_Tables();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.rcptt.ecl.data.commands.WriteExcelFile#getUri <em>Uri</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Uri</em>'.
+	 * @see org.eclipse.rcptt.ecl.data.commands.WriteExcelFile#getUri()
+	 * @see #getWriteExcelFile()
+	 * @generated
+	 */
+	EAttribute getWriteExcelFile_Uri();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.rcptt.ecl.data.commands.ReadExcelFile <em>Read Excel File</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Read Excel File</em>'.
+	 * @see org.eclipse.rcptt.ecl.data.commands.ReadExcelFile
+	 * @generated
+	 */
+	EClass getReadExcelFile();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.rcptt.ecl.data.commands.ReadExcelFile#getUri <em>Uri</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Uri</em>'.
+	 * @see org.eclipse.rcptt.ecl.data.commands.ReadExcelFile#getUri()
+	 * @see #getReadExcelFile()
+	 * @generated
+	 */
+	EAttribute getReadExcelFile_Uri();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.eclipse.rcptt.ecl.data.commands.ReadExcelFile#getSheets <em>Sheets</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Sheets</em>'.
+	 * @see org.eclipse.rcptt.ecl.data.commands.ReadExcelFile#getSheets()
+	 * @see #getReadExcelFile()
+	 * @generated
+	 */
+	EAttribute getReadExcelFile_Sheets();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.rcptt.ecl.data.commands.GetPageName <em>Get Page Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Get Page Name</em>'.
+	 * @see org.eclipse.rcptt.ecl.data.commands.GetPageName
+	 * @generated
+	 */
+	EClass getGetPageName();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.rcptt.ecl.data.commands.GetPageName#getTable <em>Table</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Table</em>'.
+	 * @see org.eclipse.rcptt.ecl.data.commands.GetPageName#getTable()
+	 * @see #getGetPageName()
+	 * @generated
+	 */
+	EReference getGetPageName_Table();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.rcptt.ecl.data.commands.SetPageName <em>Set Page Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Set Page Name</em>'.
+	 * @see org.eclipse.rcptt.ecl.data.commands.SetPageName
+	 * @generated
+	 */
+	EClass getSetPageName();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.rcptt.ecl.data.commands.SetPageName#getTable <em>Table</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Table</em>'.
+	 * @see org.eclipse.rcptt.ecl.data.commands.SetPageName#getTable()
+	 * @see #getSetPageName()
+	 * @generated
+	 */
+	EReference getSetPageName_Table();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.rcptt.ecl.data.commands.SetPageName#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.eclipse.rcptt.ecl.data.commands.SetPageName#getName()
+	 * @see #getSetPageName()
+	 * @generated
+	 */
+	EAttribute getSetPageName_Name();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.rcptt.ecl.data.commands.GetColumnNames <em>Get Column Names</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Get Column Names</em>'.
+	 * @see org.eclipse.rcptt.ecl.data.commands.GetColumnNames
+	 * @generated
+	 */
+	EClass getGetColumnNames();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.rcptt.ecl.data.commands.GetColumnNames#getTable <em>Table</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Table</em>'.
+	 * @see org.eclipse.rcptt.ecl.data.commands.GetColumnNames#getTable()
+	 * @see #getGetColumnNames()
+	 * @generated
+	 */
+	EReference getGetColumnNames_Table();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.rcptt.ecl.data.commands.GetRowsData <em>Get Rows Data</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Get Rows Data</em>'.
+	 * @see org.eclipse.rcptt.ecl.data.commands.GetRowsData
+	 * @generated
+	 */
+	EClass getGetRowsData();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.rcptt.ecl.data.commands.GetRowsData#getTable <em>Table</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Table</em>'.
+	 * @see org.eclipse.rcptt.ecl.data.commands.GetRowsData#getTable()
+	 * @see #getGetRowsData()
+	 * @generated
+	 */
+	EReference getGetRowsData_Table();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.rcptt.ecl.data.commands.ListAsTableData <em>List As Table Data</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>List As Table Data</em>'.
+	 * @see org.eclipse.rcptt.ecl.data.commands.ListAsTableData
+	 * @generated
+	 */
+	EClass getListAsTableData();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.rcptt.ecl.data.commands.ListAsTableData#getList <em>List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>List</em>'.
+	 * @see org.eclipse.rcptt.ecl.data.commands.ListAsTableData#getList()
+	 * @see #getListAsTableData()
+	 * @generated
+	 */
+	EReference getListAsTableData_List();
+
+	/**
 	 * Returns the meta object for enum '{@link org.eclipse.rcptt.ecl.data.commands.IgnoreColumnsMode <em>Ignore Columns Mode</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1654,6 +2183,156 @@ public interface CommandsPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute READ_FILE__URI = eINSTANCE.getReadFile_Uri();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.rcptt.ecl.data.commands.impl.WriteExcelFileImpl <em>Write Excel File</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.rcptt.ecl.data.commands.impl.WriteExcelFileImpl
+		 * @see org.eclipse.rcptt.ecl.data.commands.impl.CommandsPackageImpl#getWriteExcelFile()
+		 * @generated
+		 */
+		EClass WRITE_EXCEL_FILE = eINSTANCE.getWriteExcelFile();
+
+		/**
+		 * The meta object literal for the '<em><b>Tables</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference WRITE_EXCEL_FILE__TABLES = eINSTANCE.getWriteExcelFile_Tables();
+
+		/**
+		 * The meta object literal for the '<em><b>Uri</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WRITE_EXCEL_FILE__URI = eINSTANCE.getWriteExcelFile_Uri();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.rcptt.ecl.data.commands.impl.ReadExcelFileImpl <em>Read Excel File</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.rcptt.ecl.data.commands.impl.ReadExcelFileImpl
+		 * @see org.eclipse.rcptt.ecl.data.commands.impl.CommandsPackageImpl#getReadExcelFile()
+		 * @generated
+		 */
+		EClass READ_EXCEL_FILE = eINSTANCE.getReadExcelFile();
+
+		/**
+		 * The meta object literal for the '<em><b>Uri</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute READ_EXCEL_FILE__URI = eINSTANCE.getReadExcelFile_Uri();
+
+		/**
+		 * The meta object literal for the '<em><b>Sheets</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute READ_EXCEL_FILE__SHEETS = eINSTANCE.getReadExcelFile_Sheets();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.rcptt.ecl.data.commands.impl.GetPageNameImpl <em>Get Page Name</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.rcptt.ecl.data.commands.impl.GetPageNameImpl
+		 * @see org.eclipse.rcptt.ecl.data.commands.impl.CommandsPackageImpl#getGetPageName()
+		 * @generated
+		 */
+		EClass GET_PAGE_NAME = eINSTANCE.getGetPageName();
+
+		/**
+		 * The meta object literal for the '<em><b>Table</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GET_PAGE_NAME__TABLE = eINSTANCE.getGetPageName_Table();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.rcptt.ecl.data.commands.impl.SetPageNameImpl <em>Set Page Name</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.rcptt.ecl.data.commands.impl.SetPageNameImpl
+		 * @see org.eclipse.rcptt.ecl.data.commands.impl.CommandsPackageImpl#getSetPageName()
+		 * @generated
+		 */
+		EClass SET_PAGE_NAME = eINSTANCE.getSetPageName();
+
+		/**
+		 * The meta object literal for the '<em><b>Table</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SET_PAGE_NAME__TABLE = eINSTANCE.getSetPageName_Table();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SET_PAGE_NAME__NAME = eINSTANCE.getSetPageName_Name();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.rcptt.ecl.data.commands.impl.GetColumnNamesImpl <em>Get Column Names</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.rcptt.ecl.data.commands.impl.GetColumnNamesImpl
+		 * @see org.eclipse.rcptt.ecl.data.commands.impl.CommandsPackageImpl#getGetColumnNames()
+		 * @generated
+		 */
+		EClass GET_COLUMN_NAMES = eINSTANCE.getGetColumnNames();
+
+		/**
+		 * The meta object literal for the '<em><b>Table</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GET_COLUMN_NAMES__TABLE = eINSTANCE.getGetColumnNames_Table();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.rcptt.ecl.data.commands.impl.GetRowsDataImpl <em>Get Rows Data</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.rcptt.ecl.data.commands.impl.GetRowsDataImpl
+		 * @see org.eclipse.rcptt.ecl.data.commands.impl.CommandsPackageImpl#getGetRowsData()
+		 * @generated
+		 */
+		EClass GET_ROWS_DATA = eINSTANCE.getGetRowsData();
+
+		/**
+		 * The meta object literal for the '<em><b>Table</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GET_ROWS_DATA__TABLE = eINSTANCE.getGetRowsData_Table();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.rcptt.ecl.data.commands.impl.ListAsTableDataImpl <em>List As Table Data</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.rcptt.ecl.data.commands.impl.ListAsTableDataImpl
+		 * @see org.eclipse.rcptt.ecl.data.commands.impl.CommandsPackageImpl#getListAsTableData()
+		 * @generated
+		 */
+		EClass LIST_AS_TABLE_DATA = eINSTANCE.getListAsTableData();
+
+		/**
+		 * The meta object literal for the '<em><b>List</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LIST_AS_TABLE_DATA__LIST = eINSTANCE.getListAsTableData_List();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.rcptt.ecl.data.commands.IgnoreColumnsMode <em>Ignore Columns Mode</em>}' enum.

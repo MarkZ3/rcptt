@@ -79,8 +79,6 @@ public class PropertyCellEditor extends TextCellEditor {
 	private int listMaxHeight;
 	private int descWidth;
 	private int descHeight;
-	private boolean open = false;
-	private boolean closed = false;
 
 	private static final int LIST_MAX_HEIGHT = 200;
 	private static final int DESC_WIDTH = 350;
@@ -95,9 +93,9 @@ public class PropertyCellEditor extends TextCellEditor {
 		createButton();
 		addListeners();
 	}
-	
+
 	public void completeEdit() {
-		
+
 	}
 
 	private void createPopup(Text textField) {
@@ -179,9 +177,6 @@ public class PropertyCellEditor extends TextCellEditor {
 	}
 
 	private void open() {
-		if (closed) {
-			return;
-		}
 		if (!isActive()) {
 			return;
 		}
@@ -191,11 +186,10 @@ public class PropertyCellEditor extends TextCellEditor {
 		setChildElementsBounds();
 		filterValues(text.getText());
 		shell.setVisible(true);
+		text.setFocus();
 	}
 
 	private void close() {
-		this.open = false;
-		this.closed = true;
 		if (!shell.isDisposed()) {
 			shell.setVisible(false);
 		}
@@ -209,7 +203,8 @@ public class PropertyCellEditor extends TextCellEditor {
 
 			@Override
 			public void modifyText(ModifyEvent e) {
-				// Don't apply filtering if the value is changed by selection from list 
+				// Don't apply filtering if the value is changed by selection
+				// from list
 				if (valueIsSelectedFromList) {
 					valueIsSelectedFromList = false;
 					return;
@@ -247,27 +242,27 @@ public class PropertyCellEditor extends TextCellEditor {
 			}
 
 		});
-		
+
 		list.addSelectionListener(new SelectionListener() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				selectValueFromList(list.getSelectionIndex());
 			}
-			
+
 			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 			}
 		});
-		
+
 		list.addMouseListener(new MouseListener() {
 			@Override
 			public void mouseUp(MouseEvent e) {
 			}
-			
+
 			@Override
 			public void mouseDown(MouseEvent e) {
 			}
-			
+
 			@Override
 			public void mouseDoubleClick(MouseEvent e) {
 				selectValueFromList(list.getSelectionIndex());
@@ -326,12 +321,22 @@ public class PropertyCellEditor extends TextCellEditor {
 						return;
 					}
 				}
-				cancelJobs();
-
+				if (text != null) {
+					cancelJobs();
+				}
 			}
 
 			@Override
 			public void focusLost(FocusEvent e) {
+//				if (e.widget == text) {
+//					Rectangle area = text.getClientArea();
+//					Point point = text.getDisplay().getCursorLocation();
+//					Point inCongrol = text.toControl(point.x, point.y);
+//					if (area.contains(inCongrol)) {
+//						System.out.println("###");
+////						return;
+//					}
+//				}
 				addJob();
 			}
 
@@ -394,11 +399,12 @@ public class PropertyCellEditor extends TextCellEditor {
 					public void run() {
 						// If user clicks on the description (or scrolls it),
 						// focusGained event is not fired for browser.
-						// So, we check a current focus control before closing the popup.
+						// So, we check a current focus control before closing
+						// the popup.
 						// On windows current control - WebSite
 						// and we check control.getParent().getParent() from it.
 						Control control = Display.getDefault().getFocusControl();
-						if (control == browser || (control.getParent() != null
+						if (control == browser || (control != null && control.getParent() != null
 								&& control.getParent().getParent() != null
 								&& control.getParent().getParent() == browser)) {
 							list.setFocus();
@@ -461,30 +467,19 @@ public class PropertyCellEditor extends TextCellEditor {
 		if (!filterEnabled) {
 			return;
 		}
-		if (!isOpen()) {
-			return;
-		}
-		if (value == null) {
+
+		if (value == null || value.trim().length() == 0) {
 			value = "";
 		}
 		java.util.List<String> items = new ArrayList<String>();
 		for (SuggestionItem suggestion : suggestions) {
 			String name = suggestion.getName();
-			if (name.startsWith(value)) {
+			if (name.toLowerCase().startsWith(value.toLowerCase()) || value.isEmpty()) {
 				items.add(name);
 			}
 		}
-		if (items.isEmpty()) {
-			shell.setVisible(false);
-			description.setVisible(false);
-			return;
-		}
-		description.setVisible(false);
 		list.setItems(items.toArray(new String[0]));
 		list.deselectAll();
-		setShellBounds();
-		setChildElementsBounds();
-		shell.setVisible(true);
 	}
 
 	private void setItems(java.util.List<SuggestionItem> suggestions) {

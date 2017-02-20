@@ -8,7 +8,7 @@
  * Contributors:
  *     Xored Software Inc - initial API and implementation and/or initial documentation
  *******************************************************************************/
-package org.eclipse.rcptt.ecl.data.internal.commands;
+package org.eclipse.rcptt.ecl.data.apache.poi.impl.internal.commands;
 
 import java.io.IOException;
 
@@ -23,8 +23,8 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.rcptt.ecl.core.Command;
-import org.eclipse.rcptt.ecl.data.commands.ReadExcelFile;
-import org.eclipse.rcptt.ecl.data.internal.EclDataPlugin;
+import org.eclipse.rcptt.ecl.data.apache.poi.commands.ReadExcelFile;
+import org.eclipse.rcptt.ecl.data.apache.poi.impl.internal.EclDataApachePOIImplPlugin;
 import org.eclipse.rcptt.ecl.data.objects.ObjectsFactory;
 import org.eclipse.rcptt.ecl.data.objects.Table;
 import org.eclipse.rcptt.ecl.filesystem.EclFile;
@@ -48,7 +48,7 @@ public class ReadExcelFileService implements ICommandService {
 				// try to read sheets
 				for (String sheetName : sheetNames) {
 					if (book.getSheet(sheetName) == null) {
-						return EclDataPlugin.createErr("Sheet %s does not persist in file %s",
+						return EclDataApachePOIImplPlugin.createErr("Sheet %s does not persist in file %s",
 								sheetName, file.toURI());
 					}
 					Table table = readTable(book, book.getSheetIndex(sheetName));
@@ -60,7 +60,7 @@ public class ReadExcelFileService implements ICommandService {
 				while (sheetnum < book.getNumberOfSheets()) {
 					Table table = readTable(book, sheetnum);
 					if (table == null) {
-						return EclDataPlugin.createErr("First row on sheet %d of file %s does not contain data",
+						return EclDataApachePOIImplPlugin.createErr("First row on sheet %d of file %s does not contain data",
 								sheetnum, file.toURI());
 					}
 					context.getOutput().write(table);
@@ -68,10 +68,10 @@ public class ReadExcelFileService implements ICommandService {
 				}
 			}
 		} catch (InvalidFormatException e) {
-			return EclDataPlugin.createErr("Error getting extension of file %s. Only 'xls' and 'xslx' are supported.",
+			return EclDataApachePOIImplPlugin.createErr("Error getting extension of file %s. Only 'xls' and 'xslx' are supported.",
 					file.toURI());
 		} catch (IOException e) {
-			return EclDataPlugin.createErr(e, "Error reading file %s",
+			return EclDataApachePOIImplPlugin.createErr(e, "Error reading file %s",
 					file.toURI());
 		}
 

@@ -130,14 +130,6 @@ public class CommandsAdapterFactory extends AdapterFactoryImpl {
 				return createReadFileAdapter();
 			}
 			@Override
-			public Adapter caseWriteExcelFile(WriteExcelFile object) {
-				return createWriteExcelFileAdapter();
-			}
-			@Override
-			public Adapter caseReadExcelFile(ReadExcelFile object) {
-				return createReadExcelFileAdapter();
-			}
-			@Override
 			public Adapter caseGetPageName(GetPageName object) {
 				return createGetPageNameAdapter();
 			}
@@ -360,34 +352,6 @@ public class CommandsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createReadFileAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.rcptt.ecl.data.commands.WriteExcelFile <em>Write Excel File</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.rcptt.ecl.data.commands.WriteExcelFile
-	 * @generated
-	 */
-	public Adapter createWriteExcelFileAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.rcptt.ecl.data.commands.ReadExcelFile <em>Read Excel File</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.rcptt.ecl.data.commands.ReadExcelFile
-	 * @generated
-	 */
-	public Adapter createReadExcelFileAdapter() {
 		return null;
 	}
 

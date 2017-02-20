@@ -184,20 +184,6 @@ public class CommandsSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CommandsPackage.WRITE_EXCEL_FILE: {
-				WriteExcelFile writeExcelFile = (WriteExcelFile)theEObject;
-				T result = caseWriteExcelFile(writeExcelFile);
-				if (result == null) result = caseCommand(writeExcelFile);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CommandsPackage.READ_EXCEL_FILE: {
-				ReadExcelFile readExcelFile = (ReadExcelFile)theEObject;
-				T result = caseReadExcelFile(readExcelFile);
-				if (result == null) result = caseCommand(readExcelFile);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case CommandsPackage.GET_PAGE_NAME: {
 				GetPageName getPageName = (GetPageName)theEObject;
 				T result = caseGetPageName(getPageName);
@@ -429,36 +415,6 @@ public class CommandsSwitch<T> {
 	 * @generated
 	 */
 	public T caseReadFile(ReadFile object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Write Excel File</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Write Excel File</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseWriteExcelFile(WriteExcelFile object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Read Excel File</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Read Excel File</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseReadExcelFile(ReadExcelFile object) {
 		return null;
 	}
 

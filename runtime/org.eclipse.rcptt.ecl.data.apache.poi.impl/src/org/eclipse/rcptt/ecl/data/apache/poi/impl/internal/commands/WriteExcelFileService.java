@@ -8,7 +8,7 @@
  * Contributors: 
  *     Xored Software Inc - initial API and implementation and/or initial documentation 
  *******************************************************************************/
-package org.eclipse.rcptt.ecl.data.internal.commands;
+package org.eclipse.rcptt.ecl.data.apache.poi.impl.internal.commands;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -26,8 +26,8 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.rcptt.ecl.core.Command;
-import org.eclipse.rcptt.ecl.data.commands.WriteExcelFile;
-import org.eclipse.rcptt.ecl.data.internal.EclDataPlugin;
+import org.eclipse.rcptt.ecl.data.apache.poi.commands.WriteExcelFile;
+import org.eclipse.rcptt.ecl.data.apache.poi.impl.internal.EclDataApachePOIImplPlugin;
 import org.eclipse.rcptt.ecl.data.objects.Table;
 import org.eclipse.rcptt.ecl.filesystem.EclFile;
 import org.eclipse.rcptt.ecl.filesystem.FileResolver;
@@ -53,7 +53,7 @@ public class WriteExcelFileService implements ICommandService {
 		} else if (uri.endsWith(XLSX_EXTENSION)) {
 			book = new XSSFWorkbook();
 		} else {
-			return EclDataPlugin.createErr("Error getting file extension %s. Only 'xls' and 'xslx' are supported.",
+			return EclDataApachePOIImplPlugin.createErr("Error getting file extension %s. Only 'xls' and 'xslx' are supported.",
 					file.toURI());
 		}
 
@@ -79,7 +79,7 @@ public class WriteExcelFileService implements ICommandService {
 			book.write(stream);
 			stream.close();
 		} catch (IOException e) {
-			return EclDataPlugin.createErr(e, "Error writing file %s",
+			return EclDataApachePOIImplPlugin.createErr(e, "Error writing file %s",
 					file.toURI());
 		}
 		return Status.OK_STATUS;

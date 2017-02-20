@@ -147,24 +147,6 @@ public interface CommandsFactory extends EFactory {
 	ReadFile createReadFile();
 
 	/**
-	 * Returns a new object of class '<em>Write Excel File</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Write Excel File</em>'.
-	 * @generated
-	 */
-	WriteExcelFile createWriteExcelFile();
-
-	/**
-	 * Returns a new object of class '<em>Read Excel File</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Read Excel File</em>'.
-	 * @generated
-	 */
-	ReadExcelFile createReadExcelFile();
-
-	/**
 	 * Returns a new object of class '<em>Get Page Name</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

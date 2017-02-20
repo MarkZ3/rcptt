@@ -34,7 +34,6 @@ import org.eclipse.rcptt.ecl.data.commands.IgnoreColumnsMode;
 import org.eclipse.rcptt.ecl.data.commands.ListAsTableData;
 import org.eclipse.rcptt.ecl.data.commands.Print;
 import org.eclipse.rcptt.ecl.data.commands.ReadCsvFile;
-import org.eclipse.rcptt.ecl.data.commands.ReadExcelFile;
 import org.eclipse.rcptt.ecl.data.commands.ReadFile;
 import org.eclipse.rcptt.ecl.data.commands.ReadLines;
 import org.eclipse.rcptt.ecl.data.commands.ReadProperties;
@@ -43,7 +42,6 @@ import org.eclipse.rcptt.ecl.data.commands.SelectColumns;
 import org.eclipse.rcptt.ecl.data.commands.SelectRows;
 import org.eclipse.rcptt.ecl.data.commands.SetPageName;
 import org.eclipse.rcptt.ecl.data.commands.WriteCsvFile;
-import org.eclipse.rcptt.ecl.data.commands.WriteExcelFile;
 import org.eclipse.rcptt.ecl.data.commands.WriteLines;
 import org.eclipse.rcptt.ecl.data.objects.ObjectsPackage;
 
@@ -144,20 +142,6 @@ public class CommandsPackageImpl extends EPackageImpl implements CommandsPackage
 	 * @generated
 	 */
 	private EClass readFileEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass writeExcelFileEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass readExcelFileEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -647,60 +631,6 @@ public class CommandsPackageImpl extends EPackageImpl implements CommandsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getWriteExcelFile() {
-		return writeExcelFileEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getWriteExcelFile_Tables() {
-		return (EReference)writeExcelFileEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getWriteExcelFile_Uri() {
-		return (EAttribute)writeExcelFileEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getReadExcelFile() {
-		return readExcelFileEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getReadExcelFile_Uri() {
-		return (EAttribute)readExcelFileEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getReadExcelFile_Sheets() {
-		return (EAttribute)readExcelFileEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getGetPageName() {
 		return getPageNameEClass;
 	}
@@ -895,14 +825,6 @@ public class CommandsPackageImpl extends EPackageImpl implements CommandsPackage
 		readFileEClass = createEClass(READ_FILE);
 		createEAttribute(readFileEClass, READ_FILE__URI);
 
-		writeExcelFileEClass = createEClass(WRITE_EXCEL_FILE);
-		createEReference(writeExcelFileEClass, WRITE_EXCEL_FILE__TABLES);
-		createEAttribute(writeExcelFileEClass, WRITE_EXCEL_FILE__URI);
-
-		readExcelFileEClass = createEClass(READ_EXCEL_FILE);
-		createEAttribute(readExcelFileEClass, READ_EXCEL_FILE__URI);
-		createEAttribute(readExcelFileEClass, READ_EXCEL_FILE__SHEETS);
-
 		getPageNameEClass = createEClass(GET_PAGE_NAME);
 		createEReference(getPageNameEClass, GET_PAGE_NAME__TABLE);
 
@@ -970,8 +892,6 @@ public class CommandsPackageImpl extends EPackageImpl implements CommandsPackage
 		asTableDataEClass.getESuperTypes().add(theCorePackage.getCommand());
 		readPropertiesEClass.getESuperTypes().add(theCorePackage.getCommand());
 		readFileEClass.getESuperTypes().add(theCorePackage.getCommand());
-		writeExcelFileEClass.getESuperTypes().add(theCorePackage.getCommand());
-		readExcelFileEClass.getESuperTypes().add(theCorePackage.getCommand());
 		getPageNameEClass.getESuperTypes().add(theCorePackage.getCommand());
 		setPageNameEClass.getESuperTypes().add(theCorePackage.getCommand());
 		getColumnNamesEClass.getESuperTypes().add(theCorePackage.getCommand());
@@ -1032,14 +952,6 @@ public class CommandsPackageImpl extends EPackageImpl implements CommandsPackage
 
 		initEClass(readFileEClass, ReadFile.class, "ReadFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getReadFile_Uri(), theEcorePackage.getEString(), "uri", null, 1, 1, ReadFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(writeExcelFileEClass, WriteExcelFile.class, "WriteExcelFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getWriteExcelFile_Tables(), theObjectsPackage.getTable(), null, "tables", null, 1, -1, WriteExcelFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getWriteExcelFile_Uri(), theEcorePackage.getEString(), "uri", null, 1, 1, WriteExcelFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(readExcelFileEClass, ReadExcelFile.class, "ReadExcelFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getReadExcelFile_Uri(), theEcorePackage.getEString(), "uri", null, 1, 1, ReadExcelFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getReadExcelFile_Sheets(), theEcorePackage.getEString(), "sheets", null, 0, -1, ReadExcelFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(getPageNameEClass, GetPageName.class, "GetPageName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGetPageName_Table(), theObjectsPackage.getTable(), null, "table", null, 1, 1, GetPageName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1327,46 +1239,6 @@ public class CommandsPackageImpl extends EPackageImpl implements CommandsPackage
 			 "description", "URI to read file from. Currently supported schemes are workspace:/ for files in workspace and file:/ for files on local file system"
 		   });	
 		addAnnotation
-		  (writeExcelFileEClass, 
-		   source, 
-		   new String[] {
-			 "description", "Writes tables from input pipe to into excel (xls or xlsx) file. Fails if file is not found or format is invalid.",
-			 "returns", "The value of <code>tables</code> argument",
-			 "example", "get-view \"Error Log\" | get-tree | expand-all\nget-view \"Error Log\" | get-tree | get-table-data | write-excel-file \"workspace:/MyProject/AssertData/table.xls\""
-		   });	
-		addAnnotation
-		  (getWriteExcelFile_Tables(), 
-		   source, 
-		   new String[] {
-			 "description", "Tables to write"
-		   });	
-		addAnnotation
-		  (getWriteExcelFile_Uri(), 
-		   source, 
-		   new String[] {
-			 "description", "URI to write Excel data to. Currently supported schemes are workspace:/ for files in workspace and file:/ for files on local file system"
-		   });	
-		addAnnotation
-		  (readExcelFileEClass, 
-		   source, 
-		   new String[] {
-			 "description", "Parses given excel file (xls or xlsx) into tables and write them to output pipe. Fails if file is not found or format is invalid.",
-			 "returns", "List of <code>Table</code> EMF Objects",
-			 "example", "get-view \"Error Log\" | get-tree | expand-all\nget-view \"Error Log\" | get-tree | get-table-data | write-excel-file\n\"workspace:/MyProject/AssertData/table.xls\"\n\nread-excel-file \"workspace:/MyProject/AssertData/table.xls\"\n\t| get-rows-data | each [val item] {\n\t\t$item | get \"Message\" | log\n}"
-		   });	
-		addAnnotation
-		  (getReadExcelFile_Uri(), 
-		   source, 
-		   new String[] {
-			 "description", "URI to read Excel data from. Currently supported schemes are workspace:/ for files in workspace and file:/ for files on local file system"
-		   });	
-		addAnnotation
-		  (getReadExcelFile_Sheets(), 
-		   source, 
-		   new String[] {
-			 "description", "List of Excel sheet names to read data from"
-		   });	
-		addAnnotation
 		  (getPageNameEClass, 
 		   source, 
 		   new String[] {
@@ -1509,11 +1381,6 @@ public class CommandsPackageImpl extends EPackageImpl implements CommandsPackage
 		   });	
 		addAnnotation
 		  (getReadFile_Uri(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getWriteExcelFile_Tables(), 
 		   source, 
 		   new String[] {
 		   });	

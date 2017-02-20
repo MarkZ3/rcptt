@@ -1,25 +1,23 @@
-/*******************************************************************************
- * Copyright (c) 2009, 2016 Xored Software Inc and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *
- * Contributors:
- *     Xored Software Inc - initial API and implementation and/or initial documentation
- *******************************************************************************/
-package org.eclipse.rcptt.ecl.data.commands.impl;
+/**
+ */
+package org.eclipse.rcptt.ecl.data.apache.poi.commands.impl;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+
 import org.eclipse.rcptt.ecl.core.impl.CommandImpl;
-import org.eclipse.rcptt.ecl.data.commands.CommandsPackage;
-import org.eclipse.rcptt.ecl.data.commands.ReadExcelFile;
+
+import org.eclipse.rcptt.ecl.data.apache.poi.commands.CommandsPackage;
+import org.eclipse.rcptt.ecl.data.apache.poi.commands.ReadExcelFile;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,8 +27,8 @@ import org.eclipse.rcptt.ecl.data.commands.ReadExcelFile;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.rcptt.ecl.data.commands.impl.ReadExcelFileImpl#getUri <em>Uri</em>}</li>
- *   <li>{@link org.eclipse.rcptt.ecl.data.commands.impl.ReadExcelFileImpl#getSheets <em>Sheets</em>}</li>
+ *   <li>{@link org.eclipse.rcptt.ecl.data.apache.poi.commands.impl.ReadExcelFileImpl#getUri <em>Uri</em>}</li>
+ *   <li>{@link org.eclipse.rcptt.ecl.data.apache.poi.commands.impl.ReadExcelFileImpl#getSheets <em>Sheets</em>}</li>
  * </ul>
  *
  * @generated

@@ -66,8 +66,8 @@
 	  
 	  <destination>${project.basedir}/dependencies</destination>
 	  <followStrictOnly>true</followStrictOnly>
-	  <includeOptional>false</includeOptional>
-	  <includeNonGreedy>false</includeNonGreedy>
+	  <includeOptional>true</includeOptional>
+	  <includeNonGreedy>true</includeNonGreedy>
 	  <latestVersionOnly>true</latestVersionOnly>
 	  <mirrorMetadataOnly>false</mirrorMetadataOnly>
 	  <compress>true</compress>
@@ -77,6 +77,9 @@
 	  <ius>
 	    <iu><id>org.apache.poi</id></iu>
 	    <iu><id>org.apache.poi.ooxml</id></iu>
+	    <iu><id>org.apache.poi.ooxml.schemas</id></iu>
+	    <iu><id>org.apache.xmlbeans</id></iu>
+	    <iu><id>org.dom4j</id></iu>
 	  </ius>
 	</configuration>
       </plugin>

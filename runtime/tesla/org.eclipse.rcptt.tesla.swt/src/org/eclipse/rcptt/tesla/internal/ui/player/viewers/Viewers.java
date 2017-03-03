@@ -1089,7 +1089,7 @@ public class Viewers {
 			final SWTUIPlayer player = parent.getPlayer();
 			final Tree tree = (Tree) unwrapWidget(parent);
 			final TreeItem current = (TreeItem) firstMatch(path, tree);
-			if (current != null) {
+			if (current != null && !current.isDisposed()) {
 				tree.forceFocus();
 				player.exec("checkTreeItem for tree", new Runnable() {
 					public void run() {

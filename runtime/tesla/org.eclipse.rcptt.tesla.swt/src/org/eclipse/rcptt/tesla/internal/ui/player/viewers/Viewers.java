@@ -1094,8 +1094,11 @@ public class Viewers {
 				player.exec("checkTreeItem for tree", new Runnable() {
 					public void run() {
 						SWTEvents player = parent.getPlayer().getEvents();
-						current.setChecked(newState);
-						player.sendEvent(tree, current, SWT.Selection, SWT.CHECK);
+						System.out.println("Checking isDisposed:" + current.isDisposed());
+						if (current != null && !current.isDisposed()) {
+							current.setChecked(newState);
+							player.sendEvent(tree, current, SWT.Selection, SWT.CHECK);
+						}
 					}
 				});
 				return true;
